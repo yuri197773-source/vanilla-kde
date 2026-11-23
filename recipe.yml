@@ -1,0 +1,18 @@
+name: Vanilla OS 3 KDE
+id: vanilla-os-kde
+stages:
+  - id: build
+    base: ghcr.io/vanilla-os/desktop:main
+    singlelayer: false
+    labels:
+      maintainer: Custom Build
+    modules:
+      - name: install-kde
+        type: apt
+        sources:
+          - packages:
+              - kde-standard
+              - sddm
+              - konsole
+              - dolphin
+
